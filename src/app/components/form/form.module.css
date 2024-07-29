@@ -1,0 +1,51 @@
+
+.mainform{
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    justify-content: center;
+    align-items: flex-start;
+    max-width: 600px;
+    background-color: #343434;
+    color: white;
+    width: 100%;
+    padding: 5%;
+    border-radius: 0 60px 60px 0;
+    align-items: center;
+  }
+  
+
+.containerReturnEmail{
+    display: flex;
+    flex-direction: column;
+    gap:8px;
+}
+
+
+.emailContainer{
+    display: flex;
+    flex-direction: row;
+    gap:16px;
+}
+
+@media(max-width: 600px){
+
+    .container{
+        max-width: 400px;
+    }
+    .main{
+        width: 360px;
+        max-width: 400px;
+    }
+    .mainform{
+        max-width: 400px;
+    }
+}
+
+@media(max-width: 1000px){
+    
+.mainform{
+    border-radius: 10px;
+}
+}
+  
