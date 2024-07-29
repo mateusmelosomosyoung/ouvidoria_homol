@@ -72,5 +72,8 @@ export default function Home() {
         </div>
       </div>
     </main>
-  );
+  )
 }
+
+
+Home.displayName = 'Home'
