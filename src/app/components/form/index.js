@@ -1,6 +1,6 @@
 'use client'
 import { useState, useEffect } from 'react'
-import { Tooltip } from 'bootstrap'
+import { Tooltip, OverlayTrigger } from 'react-bootstrap'
 import Image from 'next/image'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
@@ -17,12 +17,18 @@ const FormComponent = () => {
     console.log({ subject, description, email })
   }
 
-  useEffect(() => {
-    if (typeof window !== 'undefined') {
-      const tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
-      tooltipTriggerList.map((tooltipTriggerEl) => new Tooltip(tooltipTriggerEl))
-    }
-  }, [])
+
+  {/* Função para renderizar o tooltip */}
+  const renderTooltip = (message) => (props) => (
+    <Tooltip id="button-tooltip" {...props} className='custom-tooltip'>
+        {message}
+    </Tooltip>
+  )
+  
+  const tooltip = [
+    {tooltip: 'A Ouvidoria é um canal para receber e tratar reclamações, sugestões e elogios. Ela garante que todas as questões sejam analisadas e resolvidas de forma justa, promovendo a transparência e melhoria contínua.' }
+  ]
+
 
   return (
     <div className={styles.mainform}>
@@ -30,7 +36,9 @@ const FormComponent = () => {
       <form className='form' onSubmit={handleSubmit}>
         <div className='frow'>
           <h1>Ouvidoria</h1>
-          <PiInfoFill className="icon-large" data-bs-toggle="tooltip" data-bs-placement="top" title="A Ouvidoria é um canal para receber e tratar reclamações, sugestões e elogios. Ela garante que todas as questões sejam analisadas e resolvidas de forma justa, promovendo a transparência e melhoria contínua."/>
+          <OverlayTrigger  delay={{ show: 250, hide: 400 }} overlay={renderTooltip(tooltip[0].tooltip)} placement="right" >
+              <div style={{ margin: '10px', cursor: 'default' }}><PiInfoFill className="icon-large"/></div>
+          </OverlayTrigger>
         </div>
         <input
           type='text'
