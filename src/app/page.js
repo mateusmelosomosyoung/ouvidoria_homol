@@ -1,3 +1,4 @@
+'use client'
 import { useState, useEffect } from 'react'
 import { Tooltip } from 'bootstrap'
 import Image from 'next/image'
