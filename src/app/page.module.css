@@ -39,6 +39,7 @@
   width: 100%;
   padding: 5%;
   border-radius: 0 60px 60px 0;
+  align-items: center;
 }
 
 .containerReturnEmail{
@@ -54,6 +55,36 @@
 }
 
 
+@media(max-width: 600px){
+
+  .container{
+    max-width: 400px;
+  }
+  .main{
+    width: 360px;
+    max-width: 400px;
+  }
+  .mainform{
+    max-width: 400px;
+  }
+}
+
+@media(max-width: 1000px){
+    
+  .container{
+    flex-direction: column-reverse;
+    gap:20px;
+    padding: 20px;
+  }
+
+  .main{
+    border-radius: 10px;
+  }
+
+  .mainform{
+    border-radius: 10px;
+  }
+}
 
 
 @keyframes rotate {
