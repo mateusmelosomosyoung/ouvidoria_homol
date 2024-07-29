@@ -1,0 +1,66 @@
+
+
+.ouvidoriapage{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  max-width: 1000px;
+}
+
+.main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  background-image: url('/img/imgheader.png');
+  background-size: cover; /* Para cobrir toda a área */
+  background-position: center; /* Para centralizar a imagem */
+  width: 500px;
+  z-index: 1;
+  min-height: 600px;
+}
+
+.mainform{
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  justify-content: center;
+  align-items: flex-start;
+  max-width: 600px;
+  background-color: #343434;
+  color: white;
+  width: 100%;
+  padding: 5%;
+  border-radius: 0 60px 60px 0;
+}
+
+.containerReturnEmail{
+  display: flex;
+  flex-direction: column;
+  gap:8px;
+}
+
+.emailContainer{
+  display: flex;
+  flex-direction: row;
+  gap:16px;
+}
+
+
+
+
+@keyframes rotate {
+  from {
+    transform: rotate(360deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
+}
