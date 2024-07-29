@@ -1,10 +1,9 @@
 'use client'
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import { Tooltip, OverlayTrigger } from 'react-bootstrap'
 import Image from 'next/image'
-import 'bootstrap/dist/css/bootstrap.min.css';
-import 'bootstrap/dist/js/bootstrap.bundle.min.js';
-import { PiInfoFill } from "react-icons/pi";
+import 'bootstrap/dist/css/bootstrap.min.css'
+import { PiInfoFill } from "react-icons/pi"
 import styles from './form.module.css';
 
 const FormComponent = () => {
