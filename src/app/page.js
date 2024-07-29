@@ -1,4 +1,3 @@
-'use client'
 import { useState, useEffect } from 'react'
 import { Tooltip } from 'bootstrap'
 import Image from 'next/image'
@@ -7,8 +6,6 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import { PiInfoFill } from "react-icons/pi";
 
-
-
 export default function Home() {
   const [subject, setSubject] = useState('')
   const [description, setDescription] = useState('')
@@ -16,27 +13,28 @@ export default function Home() {
 
   const handleSubmit = (e) => {
     e.preventDefault()
-
     console.log({ subject, description, email })
   }
 
   useEffect(() => {
-    const tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
-    tooltipTriggerList.map((tooltipTriggerEl) => new Tooltip(tooltipTriggerEl))
+    if (typeof window !== 'undefined') {
+      const tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+      tooltipTriggerList.map((tooltipTriggerEl) => new Tooltip(tooltipTriggerEl))
+    }
   }, [])
 
   return (
     <main className='basepage'>
       <div className={styles.container}>
-        <div className={styles.main}>
-        </div>
+        <div className={styles.main}></div>
         <div className={styles.mainform}>
           <Image src={'/marca/sy_w_sm.png'} width={160} height={100} alt={'Logo young'}/>
           <form className='form' onSubmit={handleSubmit}>
             <div className='frow'>
               <h1>Ouvidoria</h1>
-              <PiInfoFill className="icon-large"  data-bs-toggle="tooltip" data-bs-placement="top" title="A Ouvidoria é um canal para receber e tratar reclamações, sugestões e elogios. Ela garante que todas as questões sejam analisadas e resolvidas de forma justa, promovendo a transparência e melhoria contínua."/>
-            </div><input
+              <PiInfoFill className="icon-large" data-bs-toggle="tooltip" data-bs-placement="top" title="A Ouvidoria é um canal para receber e tratar reclamações, sugestões e elogios. Ela garante que todas as questões sejam analisadas e resolvidas de forma justa, promovendo a transparência e melhoria contínua."/>
+            </div>
+            <input
               type='text'
               className="input"
               placeholder='Assunto'
@@ -74,6 +72,5 @@ export default function Home() {
     </main>
   )
 }
-
 
 Home.displayName = 'Home'
